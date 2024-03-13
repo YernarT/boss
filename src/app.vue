@@ -1,0 +1,58 @@
+<template>
+  <Html lang="kk">
+
+  <Head>
+    <Meta charset="UTF-8" />
+    <Meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <Meta name="theme-color" content="#00bebd" />
+    <meta name="color-scheme" content="light" />
+
+    <Meta httpEquiv="x-ua-compatible" content="IE=edge" />
+    <Meta httpEquiv="x-ua-compatible" content="IE=7" />
+
+    <Meta name="description" content="Boss" />
+    <Meta name="keywords" content="Boss" />
+    <Meta name="author" content="https://github.com/YernarT" />
+
+    <Meta property="og:title" content="Boss" />
+    <Meta property="og:description" content="Boss" />
+    <Meta property="og:image" content="/favicon.svg" />
+    <Meta property="og:site_name" content="Boss" />
+    <Meta property="og:type" content="website" />
+    <Meta property="og:locale" content="kk_KZ" />
+
+    <Link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <Link rel="preconnect" href="https://fonts.googleapis.com" />
+    <Link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <Link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet" />
+
+    <Title>Boss</Title>
+  </Head>
+
+  <Body>
+    <NuxtLayout>
+      <a-config-provider :locale="kk_KZ" :theme="ANTD_THEME">
+        <NuxtPage />
+      </a-config-provider>
+    </NuxtLayout>
+  </Body>
+
+  </Html>
+</template>
+
+<script setup lang="ts">
+// Vue
+import { onBeforeMount } from "vue";
+// Store
+import { useUserStore } from "~/stores/user";
+// Antd
+import kk_KZ from "ant-design-vue/locale/kk_KZ";
+import { ANTD_THEME } from '~/constants/antd';
+
+// Init Store
+onBeforeMount(() => {
+  const userStore = useUserStore();
+  userStore.initUserFromLocal();
+});
+</script>
