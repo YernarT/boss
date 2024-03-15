@@ -31,6 +31,7 @@
   </Head>
 
   <Body>
+    <NuxtLoadingIndicator />
     <NuxtLayout>
       <a-config-provider :locale="kk_KZ" :theme="ANTD_THEME">
         <NuxtPage />
@@ -55,4 +56,18 @@ onBeforeMount(() => {
   const userStore = useUserStore();
   userStore.initUserFromLocal();
 });
+
 </script>
+
+<style scoped lang="scss">
+.page-enter-active,
+.page-leave-active {
+  transition: opacity var(--transition), filter var(--transition);
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(4px);
+}
+</style>

@@ -21,4 +21,11 @@ export default defineNuxtConfig({
       failOnError: false,
     },
   },
+
+  app: {
+    pageTransition: {
+      name: "page",
+      mode: "out-in",
+    },
+  },
 });
