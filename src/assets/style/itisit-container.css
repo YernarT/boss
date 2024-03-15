@@ -1,0 +1,22 @@
+.itisit-container {
+  width: 100%;
+  max-width: 1184px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+@media screen and (max-width: 576px) {
+  .itisit-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media screen and (max-width: 345px) {
+  .itisit-container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
