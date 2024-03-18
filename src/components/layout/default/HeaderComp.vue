@@ -19,6 +19,8 @@
             </ClientOnly>
         </div>
     </header>
+
+    <div class="header-helper"></div>
 </template>
 
 <script setup lang="ts">
@@ -100,5 +102,9 @@ defineComponent({ name: 'HeaderComp' });
             }
         }
     }
+}
+
+.header-helper {
+    height: 50px;
 }
 </style>
